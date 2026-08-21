@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Table to Farm SLO</title>
+<meta name="description" content="Table to Farm SLO — dining for healthy soil, food, and climate. A Zero Foodprint program in San Luis Obispo County.">
+<link rel="icon" type="image/png" href="assets/t2f-swirl.png">
+<meta property="og:title" content="Table to Farm SLO">
+<meta property="og:description" content="Dining for healthy soil, food, and climate in SLO County.">
+<meta property="og:image" content="assets/t2f-badge.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@300;400;500;700&display=swap">
+<style>
+  :root{
+    --forest:#1C4D36; --pine:#123D24; --leaf:#356347; --olive:#7F9151;
+    --gold:#C8964A; --gold-soft:#EAD9A9; --soil:#4E381E; --creek:#66A1B4;
+    --cream:#F4F1E8; --parchment:#FBFAF5; --line:#E2DCC9;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:'Poppins',system-ui,sans-serif; font-weight:300;
+    background:var(--cream); color:var(--forest);
+    line-height:1.6; font-size:17px;
+  }
+  a{ color:var(--creek); text-decoration-color:rgba(102,161,180,.5); }
+  a:hover{ color:var(--forest); }
+  a:focus-visible, button:focus-visible{ outline:3px solid var(--gold); outline-offset:2px; border-radius:4px; }
+  img{ max-width:100%; }
+  .wrap{ max-width:1060px; margin:0 auto; padding:0 24px; }
+  .kicker{
+    font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; font-weight:500;
+    color:var(--gold); margin-bottom:14px;
+  }
+  h1,h2,h3{ font-family:'Lora',Georgia,serif; color:var(--pine); text-wrap:balance; }
+
+  /* nav */
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    max-width:1060px; margin:0 auto; padding:20px 24px;
+  }
+  nav .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  nav .brand img{ height:44px; width:44px; }
+  nav .brand span{ font-weight:500; font-size:1.02rem; color:var(--pine); letter-spacing:.01em; }
+  nav .links{ display:flex; gap:26px; font-size:.92rem; font-weight:400; }
+  nav .links a{ color:var(--leaf); text-decoration:none; }
+  nav .links a:hover{ color:var(--gold); }
+  @media (max-width:640px){ nav .links{ display:none; } }
+
+  /* hero */
+  header.hero{ text-align:center; padding:44px 24px 72px; }
+  .hero img.badge{
+    width:min(400px,78vw); height:auto; display:block; margin:0 auto 34px;
+    filter:drop-shadow(0 18px 40px rgba(28,77,54,.22));
+  }
+  .hero h1{ font-size:clamp(2rem, 5vw, 3.1rem); font-weight:700; line-height:1.1; }
+  .hero h1 .slo{ color:var(--gold); }
+  .hero .tag{
+    font-family:'Lora',serif; font-style:italic; font-size:clamp(1.05rem,2.6vw,1.35rem);
+    color:var(--leaf); margin-top:12px;
+  }
+  .hero p.sub{
+    max-width:620px; margin:22px auto 0; font-size:1.02rem; color:#3E5548;
+  }
+  .hero .cta-row{ margin-top:32px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn{
+    display:inline-block; font-weight:500; font-size:.95rem; text-decoration:none;
+    padding:13px 26px; border-radius:999px; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover{ transform:translateY(-1px); }
+  .btn-gold{ background:var(--gold); color:#fff; box-shadow:0 6px 16px rgba(200,150,74,.35); }
+  .btn-gold:hover{ color:#fff; }
+  .btn-line{ border:2px solid var(--forest); color:var(--forest); }
+  .btn-line:hover{ background:var(--forest); color:var(--cream); }
+
+  @media (prefers-reduced-motion:no-preference){
+    .fadeup{ opacity:0; transform:translateY(14px); animation:fu .7s ease forwards; }
+    .fadeup.d1{ animation-delay:.12s; } .fadeup.d2{ animation-delay:.24s; } .fadeup.d3{ animation-delay:.36s; }
+    @keyframes fu{ to{ opacity:1; transform:none; } }
+  }
+
+  /* sections */
+  section{ padding:72px 0; }
+  section.alt{ background:var(--parchment); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  h2{ font-size:clamp(1.5rem,3.4vw,2.1rem); font-weight:700; margin-bottom:16px; }
+  .lead{ max-width:640px; color:#3E5548; }
+  .lead strong{ font-weight:500; color:var(--pine); }
+
+  .pillars{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:38px; }
+  .pillar{
+    background:var(--cream); border:1px solid var(--line); border-radius:14px;
+    padding:28px 24px; text-align:center;
+  }
+  section:not(.alt) .pillar{ background:var(--parchment); }
+  .pillar .ic{
+    width:54px; height:54px; border-radius:50%; background:var(--gold);
+    display:inline-flex; align-items:center; justify-content:center; margin-bottom:14px;
+  }
+  .pillar .ic svg{ width:28px; height:28px; }
+  .pillar h3{ font-family:'Poppins',sans-serif; font-size:.92rem; letter-spacing:.14em; font-weight:500; margin-bottom:8px; }
+  .pillar p{ font-size:.92rem; color:#3E5548; }
+
+  /* stats */
+  .statband{ background:var(--pine); color:var(--cream); padding:52px 0; }
+  .stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:28px; text-align:center; }
+  .stat .n{ font-family:'Lora',serif; font-weight:700; font-size:2.1rem; color:var(--gold-soft); font-variant-numeric:tabular-nums; }
+  .stat .l{ font-size:.8rem; letter-spacing:.1em; text-transform:uppercase; opacity:.9; margin-top:6px; }
+  .statband .note{ text-align:center; font-size:.85rem; opacity:.75; margin-top:30px; font-weight:300; }
+
+  /* slo math */
+  .mathcard{
+    margin-top:34px; background:var(--gold-soft); border-left:6px solid var(--gold); border-radius:12px;
+    padding:26px 30px; max-width:720px;
+  }
+  .mathcard .big{ font-family:'Lora',serif; font-weight:700; font-size:1.25rem; color:var(--soil); }
+  .mathcard p{ color:#41321A; font-size:.98rem; margin-top:8px; }
+  .mathcard p b{ font-weight:500; }
+
+  /* involvement */
+  .cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(235px,1fr)); gap:22px; margin-top:38px; }
+  .card{
+    background:var(--cream); border:1px solid var(--line); border-radius:14px; padding:26px 24px;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .card h3{ font-size:1.15rem; font-weight:700; }
+  .card .role{ font-size:.75rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:500; }
+  .card p{ font-size:.92rem; color:#3E5548; flex:1; }
+  .card a.go{ font-weight:500; font-size:.9rem; color:var(--forest); text-decoration:none; }
+  .card a.go:hover{ color:var(--gold); }
+
+  /* partner strip */
+  .partner{ display:flex; flex-wrap:wrap; gap:18px 40px; align-items:center; margin-top:34px; }
+  .partner .cred{ font-size:.88rem; color:#3E5548; max-width:420px; }
+  .partner .cred b{ font-weight:500; color:var(--pine); }
+
+  /* footer */
+  footer{ background:var(--forest); color:var(--cream); padding:52px 0 40px; }
+  .frow{ display:flex; flex-wrap:wrap; gap:34px; align-items:center; justify-content:space-between; }
+  .frow .id{ display:flex; align-items:center; gap:16px; }
+  .frow .id img{ width:58px; height:58px; }
+  .frow .id .n{ font-weight:500; font-size:1.1rem; }
+  .frow .id .t{ font-family:'Lora',serif; font-style:italic; font-size:.9rem; color:#CBDCC9; }
+  .frow .contact{ font-size:.92rem; }
+  .frow .contact a{ color:var(--gold-soft); text-decoration:none; font-weight:400; }
+  .frow .contact a:hover{ text-decoration:underline; }
+  .frow img.qr{ width:86px; height:86px; background:#fff; padding:5px; border-radius:10px; }
+  .fine{ margin-top:34px; padding-top:20px; border-top:1px solid rgba(244,241,232,.2);
+         font-size:.8rem; color:#B9CBB7; display:flex; flex-wrap:wrap; gap:10px 24px; justify-content:space-between; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="#"><img src="assets/t2f-swirl.png" alt=""><span>Table to Farm SLO</span></a>
+  <div class="links">
+    <a href="#how">How it works</a>
+    <a href="#impact">Impact</a>
+    <a href="#slo">SLO County</a>
+    <a href="#join">Get involved</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img class="badge fadeup" src="assets/t2f-badge.png" alt="Tables to Farms — dining for healthy soil, food, and climate. SLO">
+  <h1 class="fadeup d1">Table to Farm <span class="slo">SLO</span></h1>
+  <div class="tag fadeup d1">healthy soil, healthy planet</div>
+  <p class="sub fadeup d2">Table to Farm SLO gives diners an easy way to help local farmers make the transition to regenerative agriculture — promoting healthy soil, healthy food, and a healthy environment. It's a triple win.</p>
+  <div class="cta-row fadeup d3">
+    <a class="btn btn-gold" href="#join">Get involved</a>
+    <a class="btn btn-line" href="#how">How it works</a>
+  </div>
+</header>
+
+<section class="alt" id="how">
+  <div class="wrap">
+    <div class="kicker">How it works</div>
+    <h2>A penny on the dollar, from the table back to the farm</h2>
+    <p class="lead">Participating businesses add a <strong>1% optional charge</strong> to the bill, and this money is passed to Zero Foodprint, a California 501(c)(3) nonprofit. Since it's a donation, customers can always choose not to pay. There's no cost to the business and no tax advantage — the business simply acts as a conduit for donations.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FBFAF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3>MEMBERSHIP</h3>
+        <p>Food and beverage businesses join as members, and customers contribute with each purchase.</p>
+      </div>
+      <div class="pillar">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FBFAF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3>GRANTS</h3>
+        <p>Farmers apply for grants to implement regenerative practices — compost, cover crops, and more — on their land.</p>
+      </div>
+      <div class="pillar">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#FBFAF5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21v-8"/><path d="M12 13c0-4.5-3.5-8-8-8 0 4.5 3.5 8 8 8z"/><path d="M12 11c0-3.5 2.7-6 6.5-6 0 3.5-2.7 6-6.5 6z"/><path d="M8 21h8"/></svg></span>
+        <h3>CARBON</h3>
+        <p>Healthy soil stores carbon underground and grows food with more nutrients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="statband" id="impact">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n">$9.5M+</div><div class="l">deployed to farms</div></div>
+      <div class="stat"><div class="n">825+</div><div class="l">grants awarded</div></div>
+      <div class="stat"><div class="n">240,000</div><div class="l">metric tons CO&#8322; sequestered</div></div>
+      <div class="stat"><div class="n">27M</div><div class="l">gal. of gasoline — equivalent not burned</div></div>
+    </div>
+    <div class="note">Zero Foodprint's impact to date across 200+ partners in California, Oregon, and Colorado.</div>
+  </div>
+</div>
+
+<section id="slo">
+  <div class="wrap">
+    <div class="kicker">Small donations, big impact</div>
+    <h2>So what can we do in SLO County?</h2>
+    <p class="lead">Through small donations across the food system, we can fund farm projects that <strong>draw carbon straight from the atmosphere and store it underground</strong>, creating nutrient-rich soil while sequestering greenhouse gases.</p>
+    <div class="mathcard">
+      <div class="big">We can do a lot.</div>
+      <p>People spent over <b>$752,000,000</b> on food and drink in SLO County last year. If even 10% of that spending happens at participating businesses, we could raise <b>$752,000 every year</b> to support carbon-smart farming — right here at home.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="join">
+  <div class="wrap">
+    <div class="kicker">Get involved</div>
+    <h2>There's a seat at this table for everyone</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="role">Restaurants &amp; beverage</div>
+        <h3>Become a member</h3>
+        <p>Join Table to Farm SLO and we'll help you get on board, train your staff, and promote your business. Learn more about the program at zerofoodprint.org.</p>
+        <a class="go" href="mailto:info@TabletoFarmSLO.org?subject=Restaurant%20membership">info@TabletoFarmSLO.org &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="role">Farmers</div>
+        <h3>Apply for a grant</h3>
+        <p>Boost soil health with a Zero Foodprint Restore Grant or Compost Connector — SLO County farmers receive preference points. Let us know so we can help you through it.</p>
+        <a class="go" href="mailto:info@TabletoFarmSLO.org?subject=Farm%20grants">info@TabletoFarmSLO.org &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="role">Diners</div>
+        <h3>Ask for it by name</h3>
+        <p>Ask the restaurants and beverage spots you love to join Table to Farm SLO — then tell us who you asked so we can follow up.</p>
+        <a class="go" href="mailto:info@TabletoFarmSLO.org?subject=I%20asked%20a%20restaurant">info@TabletoFarmSLO.org &rarr;</a>
+      </div>
+      <div class="card">
+        <div class="role">Volunteers</div>
+        <h3>Help us grow</h3>
+        <p>Join SLO Climate Coalition volunteers helping recruit businesses across the county — a few hours makes a real difference.</p>
+        <a class="go" href="mailto:info@TabletoFarmSLO.org?subject=Volunteering">info@TabletoFarmSLO.org &rarr;</a>
+      </div>
+    </div>
+
+    <div class="partner">
+      <img src="assets/t2f-lockup.png" alt="Table to Farm SLO — SLO Climate Coalition and Zero Foodprint" style="max-width:340px;">
+      <p class="cred"><b>A proven partner.</b> Zero Foodprint is a James Beard Humanitarian of the Year, was named &ldquo;Most Innovative Company in Agriculture&rdquo; by <i>Fast Company</i>, and is endorsed by CalEPA, the CA Dept. of Food &amp; Agriculture, and the CA Air Resources Board.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div class="id">
+        <img src="assets/t2f-swirl.png" alt="">
+        <div>
+          <div class="n">Table to Farm SLO</div>
+          <div class="t">healthy soil, healthy planet</div>
+        </div>
+      </div>
+      <div class="contact">
+        <a href="mailto:info@TabletoFarmSLO.org">info@TabletoFarmSLO.org</a><br>
+        tabletofarmslo.org
+      </div>
+      <img class="qr" src="assets/qr-tabletofarmslo.png" alt="QR code for tabletofarmslo.org">
+    </div>
+    <div class="fine">
+      <span>A partnership of SLO Climate Coalition and Zero Foodprint, a California 501(c)(3) nonprofit.</span>
+      <span>&copy; 2026 Table to Farm SLO</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
