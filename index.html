@@ -102,6 +102,19 @@
   .pillar h3{ font-family:'Poppins',sans-serif; font-size:.92rem; letter-spacing:.14em; font-weight:500; margin-bottom:8px; }
   .pillar p{ font-size:.92rem; color:#3E5548; }
 
+  /* member ticker */
+  .ticker{ background:var(--gold-soft); border-top:1px solid var(--line); overflow:hidden; white-space:nowrap; padding:14px 0; }
+  .ticker .track{ display:inline-flex; }
+  .ticker .item{ display:inline-flex; align-items:center; gap:28px; padding-right:28px;
+    font-family:'Lora',serif; font-size:1.15rem; color:var(--pine); }
+  .ticker .item b{ font-family:'Poppins',sans-serif; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; font-weight:500; color:var(--soil); }
+  .ticker .dot{ color:var(--gold); }
+  @media (prefers-reduced-motion:no-preference){
+    .ticker .track{ animation:ticker 45s linear infinite; }
+    .ticker:hover .track{ animation-play-state:paused; }
+  }
+  @keyframes ticker{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
   /* stats */
   .statband{ background:var(--pine); color:var(--cream); padding:52px 0; }
   .stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:28px; text-align:center; }
@@ -173,6 +186,12 @@
   </div>
 </header>
 
+<div class="ticker" role="region" aria-label="SLO County members: Beerwood, Robin's Restaurant, Novo, Luna Red">
+  <div class="track">
+    <span class="item" aria-hidden="true"><b>SLO County members</b><span class="dot">&#10022;</span>Beerwood<span class="dot">&#10022;</span>Robin&rsquo;s Restaurant<span class="dot">&#10022;</span>Novo<span class="dot">&#10022;</span>Luna Red<span class="dot">&#10022;</span></span><span class="item" aria-hidden="true"><b>SLO County members</b><span class="dot">&#10022;</span>Beerwood<span class="dot">&#10022;</span>Robin&rsquo;s Restaurant<span class="dot">&#10022;</span>Novo<span class="dot">&#10022;</span>Luna Red<span class="dot">&#10022;</span></span><span class="item" aria-hidden="true"><b>SLO County members</b><span class="dot">&#10022;</span>Beerwood<span class="dot">&#10022;</span>Robin&rsquo;s Restaurant<span class="dot">&#10022;</span>Novo<span class="dot">&#10022;</span>Luna Red<span class="dot">&#10022;</span></span><span class="item" aria-hidden="true"><b>SLO County members</b><span class="dot">&#10022;</span>Beerwood<span class="dot">&#10022;</span>Robin&rsquo;s Restaurant<span class="dot">&#10022;</span>Novo<span class="dot">&#10022;</span>Luna Red<span class="dot">&#10022;</span></span><span class="item" aria-hidden="true"><b>SLO County members</b><span class="dot">&#10022;</span>Beerwood<span class="dot">&#10022;</span>Robin&rsquo;s Restaurant<span class="dot">&#10022;</span>Novo<span class="dot">&#10022;</span>Luna Red<span class="dot">&#10022;</span></span><span class="item" aria-hidden="true"><b>SLO County members</b><span class="dot">&#10022;</span>Beerwood<span class="dot">&#10022;</span>Robin&rsquo;s Restaurant<span class="dot">&#10022;</span>Novo<span class="dot">&#10022;</span>Luna Red<span class="dot">&#10022;</span></span>
+  </div>
+</div>
+
 <section class="alt" id="how">
   <div class="wrap">
     <div class="kicker">How it works</div>
@@ -201,9 +220,9 @@
 <div class="statband" id="impact">
   <div class="wrap">
     <div class="stats">
-      <div class="stat"><div class="n">$9.5M+</div><div class="l">deployed to farms</div></div>
-      <div class="stat"><div class="n">825+</div><div class="l">grants awarded</div></div>
-      <div class="stat"><div class="n">240,000</div><div class="l">metric tons CO&#8322; sequestered</div></div>
+      <div class="stat"><div class="n">$10M+</div><div class="l">in grants awarded</div></div>
+      <div class="stat"><div class="n">260k+</div><div class="l">tons CO&#8322;e</div></div>
+      <div class="stat"><div class="n">1000+</div><div class="l">farm projects</div></div>
       <!-- <div class="stat"><div class="n">27M</div><div class="l">gal. of gasoline — equivalent not burned</div></div>-->
     </div>
     <div class="note">Zero Foodprint's impact to date across 200+ partners in California, Oregon, and Colorado (<a href="https://www.zerofoodprint.org/#:~:text=Better%20together.">see map</a>).</div>
