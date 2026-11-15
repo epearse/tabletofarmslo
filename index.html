@@ -147,11 +147,17 @@
 
   /* partner strip */
   .partner{ display:grid; grid-template-columns:1fr auto 1fr; gap:24px 40px; align-items:center; margin-top:34px; }
-  .partner img{ width:140px; height:auto; display:block; }
+  .partner > img{ width:140px; height:auto; display:block; }
+  .partner .org{ align-self:start; }
+  .partner .org img{ display:block; width:auto; margin-bottom:12px; }
+  .partner .org img{ height:40px; }
+  .partner .org .slocc{ margin-bottom:21px; }
+  .partner .org .zfp{ height:59px; margin-bottom:2px; }
   .partner .cred{ font-size:.88rem; color:#3E5548; }
   @media (max-width:720px){
     .partner{ grid-template-columns:1fr; justify-items:center; text-align:center; }
-    .partner img{ order:-1; }
+    .partner > img{ order:-1; }
+    .partner .org img{ margin-left:auto; margin-right:auto; }
   }
   .partner .cred b{ font-weight:500; color:var(--pine); }
 
@@ -281,9 +287,15 @@
     </div>
 
     <div class="partner">
-      <p class="cred"><b>SLO Climate Coalition</b> champions high-impact regional solutions by bringing together community expertise, creativity, and resources. SLOCC provides education and resources that drive action and support meaningful change toward carbon neutrality.</p>
+      <div class="org">
+        <img class="slocc" src="assets/slocc-logo.svg" alt="SLO Climate Coalition">
+        <p class="cred"><b>SLO Climate Coalition</b> champions high-impact regional solutions by bringing together community expertise, creativity, and resources. SLOCC provides education and resources that drive action and support meaningful change toward carbon neutrality.</p>
+      </div>
       <img src="assets/t2f-swirl.png" alt="Table to Farm SLO">
-      <p class="cred"><b>Zero Foodprint</b> is a James Beard Humanitarian of the Year, was named &ldquo;Most Innovative Company in Agriculture&rdquo; by <i>Fast Company</i>, and is endorsed by CalEPA, the CA Dept. of Food &amp; Agriculture, and the CA Air Resources Board.</p>
+      <div class="org">
+        <img class="zfp" src="assets/zfp-logo.svg" alt="Zero Foodprint">
+        <p class="cred"><b>Zero Foodprint</b> is a James Beard Humanitarian of the Year, was named &ldquo;Most Innovative Company in Agriculture&rdquo; by <i>Fast Company</i>, and is endorsed by CalEPA, the CA Dept. of Food &amp; Agriculture, and the CA Air Resources Board.</p>
+      </div>
     </div>
   </div>
 </section>
